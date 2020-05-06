@@ -1,11 +1,9 @@
 from enum import Enum
 from typing import Callable
 
-import cv2, numpy as np
-import sys
-from time import sleep, time
+import cv2
+from time import time
 
-from matplotlib.backend_bases import FigureCanvasBase
 from matplotlib.figure import Figure
 
 # https://github.com/maximus009/VideoPlayer/blob/master/new_test_3.py
@@ -53,6 +51,9 @@ class CV2VideoPlayer:
 
     def __setup_ui(self):
         def on_change_frame(x):
+            if x == self.__current_frame:
+                return
+
             self.__current_frame = x
             if self.__status == 'paused':
                 self.__status = 'seek_frame'
@@ -147,7 +148,7 @@ class CV2VideoPlayer:
 
         self.__show_current_frame()
         cv2.setTrackbarPos('Frame', self.__window_name, self.__current_frame)
-        self.__on_frame_callback(self.__current_frame)
+        self.__on_frame_callback(self.__current_frame / self.__fps)
 
     def stop(self):
         del self.__cap
