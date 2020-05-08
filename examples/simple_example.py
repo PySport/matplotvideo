@@ -1,5 +1,3 @@
-from random import random
-
 from matplotvideo import attach_video_player_to_figure
 import matplotlib.pyplot as plt
 

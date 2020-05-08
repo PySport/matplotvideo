@@ -21,6 +21,10 @@ pip install matplotvideo
 
 The package requires `cv2` to be installed. When you don't have it installed yet, check out [opencv-python](https://pypi.org/project/opencv-python/).
 
+## Video player controls:
+![example](examples/example.gif)
+
+
 ## Syncing
 
 ```python
