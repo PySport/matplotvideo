@@ -1,0 +1,1 @@
+from .video_player import attach_video_player_to_figure
