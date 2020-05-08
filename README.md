@@ -6,6 +6,13 @@
 ## What is it?
 
 **matplotvideo** is a Python package providing an easy way to sync matplotlib plots to video. 
+Some of the features:
+- Frame-accurate seeking forward and backward
+- Playback speed control between 0.01x and 4x
+- Auto-frame drop when updating plot takes longer than video frame duration
+- Seek through entire video
+- Fast pause/play toggle using spacebar
+- Play all cv2 supported media types
 
 ## Where to get it
 The source code is currently hosted on GitHub at:
@@ -26,7 +33,13 @@ The package requires `cv2` to be installed. When you don't have it installed yet
 - **'a'** 1 frame back
 - **'d'** 1 frame forward
 - **space** toggle paused / play
+- **esc** quit video player
 - **playback speed** can be changed with the slider
+
+## Application examples
+- Verify data using video
+- Enrich video with additional data, like computer vision model output
+- Find interesting video/data frames
 
 ## Usage
 Import `attach_video_player_to_figure` and attach to matplotlib figure. You can pass additional keyword arguments to `attach_video_player_to_figure` that are passed to the `on_frame` callback on each invocation. 
