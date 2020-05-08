@@ -21,7 +21,7 @@ fancy_data = [
 
 
 def on_frame(video_timestamp, line):
-    timestamps, y = zip(*[data_point for data_point in fancy_data])
+    timestamps, y = zip(*fancy_data)
     x = [timestamp - video_timestamp for timestamp in timestamps]
 
     line.set_data(x, y)

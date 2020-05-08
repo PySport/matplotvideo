@@ -1,7 +1,7 @@
 # matplotvideo - syncing video and matplotlib
 
 [![PyPI Latest Release](https://img.shields.io/pypi/v/matplotvideo.svg)](https://pypi.org/project/matplotvideo/)
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-PySport-orange.svg?style=flat&colorA=104467&colorB=007D8A)](https://pysport.org)
+[![Powered by PySport](https://img.shields.io/badge/powered%20by-PySport-orange.svg?style=flat&colorA=104467&colorB=007D8A)](https://pysport.org)
 --------
 ## What is it?
 
@@ -9,10 +9,10 @@
 Some of the features:
 - Frame-accurate seeking forward and backward
 - Playback speed control between 0.01x and 4x
-- Auto-frame drop when updating plot takes longer than video frame duration
-- Seek through entire video
-- Fast pause/play toggle using spacebar
-- Play all cv2 supported media types
+- Auto frame-skip to maintain playback speed when plot takes to long 
+- Seek with slider through entire video
+- Intuitive pause/play toggle using spacebar
+- Play all `cv2` supported media types
 
 ## Where to get it
 The source code is currently hosted on GitHub at:
@@ -29,7 +29,9 @@ pip install matplotvideo
 The package requires `cv2` to be installed. When you don't have it installed yet, check out [opencv-python](https://pypi.org/project/opencv-python/).
 
 ## Video player controls:
-![example](examples/example.gif)
+![example ](examples/example.gif)
+*Example of sync between scheme change data plot and video *
+ 
 - **'a'** 1 frame back
 - **'d'** 1 frame forward
 - **space** toggle paused / play
