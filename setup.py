@@ -16,7 +16,7 @@ setup(
     author_email='info@koenvossen.nl',
     url="https://github.com/PySport/matplotvideo",
     packages=setuptools.find_packages(exclude=["test", "examples"]),
-    license='Creative Commons Attribution-Noncommercial-Share Alike license',
+    license='MIT',
     description="Syncing matplotlib and video",
     long_description="\n".join(DOCLINES),
     python_requires='>=3.7',

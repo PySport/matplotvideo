@@ -26,17 +26,19 @@ package index](https://pypi.org/project/matplotvideo).
 pip install matplotvideo
 ```
 
-The package requires `cv2` to be installed. When you don't have it installed yet, check out [opencv-python](https://pypi.org/project/opencv-python/).
+The package requires `cv2` to be installed. When you don't have it installed yet, you can check out [opencv-python](https://pypi.org/project/opencv-python/).
 
 ## Video player controls:
 ![example ](examples/example.gif)
-*Example of sync between scheme change data plot and video *
+
+*Sync between Scene Change data plot and video*
  
 - **'a'** 1 frame back
 - **'d'** 1 frame forward
 - **space** toggle paused / play
 - **esc** quit video player
 - **playback speed** can be changed with the slider
+- **playback position** can be changed with the slider
 
 ## Application examples
 - Verify data using video
@@ -70,7 +72,7 @@ fancy_data = [
 
 
 def on_frame(video_timestamp, line):
-    timestamps, y = zip(*[data_point for data_point in fancy_data])
+    timestamps, y = zip(*fancy_data)
     x = [timestamp - video_timestamp for timestamp in timestamps]
 
     line.set_data(x, y)

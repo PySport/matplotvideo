@@ -135,8 +135,8 @@ class CV2VideoPlayer:
         ret, im = self.__cap.read()
         if im is None:
             return
-        r = 750.0 / im.shape[1]
-        dim = (750, int(im.shape[0] * r))
+        r = 720.0 / im.shape[1]
+        dim = (720, int(im.shape[0] * r))
         im = cv2.resize(im, dim, interpolation=cv2.INTER_AREA)
         cv2.imshow(self.__window_name, im)
 
