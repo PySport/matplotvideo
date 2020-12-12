@@ -41,8 +41,8 @@ class CV2VideoPlayer:
         if not self.__cap.isOpened():
             raise Exception(f"Could not read {filename}")
 
-        self.__frame_count = int(self.__cap.get(cv2.cv2.CAP_PROP_FRAME_COUNT))
-        self.__fps = self.__cap.get(cv2.cv2.CAP_PROP_FPS)
+        self.__frame_count = int(self.__cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        self.__fps = self.__cap.get(cv2.CAP_PROP_FPS)
 
         self.__playback_rate = 1.0
 
@@ -152,7 +152,7 @@ class CV2VideoPlayer:
         elif frame_change == FrameChange.Next:
             pass  # by default capture device reads next frame
         elif frame_change == FrameChange.Seek:
-            self.__cap.set(cv2.cv2.CAP_PROP_POS_FRAMES, self.__current_frame)
+            self.__cap.set(cv2.CAP_PROP_POS_FRAMES, self.__current_frame)
 
         self.__show_current_frame()
         cv2.setTrackbarPos('Frame', self.__window_name, self.__current_frame)
